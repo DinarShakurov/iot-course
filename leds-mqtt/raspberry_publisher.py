@@ -21,7 +21,7 @@ topic = 'eec60104-a822-4fe3-89b5-4d6360b5f334'
 
 
 def on_connect(cclient, userdata, flags, rc):
-    print(f"Connected with result code {rc}\n\t userdata={userdata}\n\t flags={flags}\n")
+    print(f"Connected with result code {rc}")
 
 
 client = mqtt.Client()
