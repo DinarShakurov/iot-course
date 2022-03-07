@@ -1,2 +1,1 @@
-# raspberry3
-IoT course
+# IoT course
