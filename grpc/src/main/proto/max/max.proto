@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package max;
+
+option java_package = "ru.shakurov.iot.grpc.proto.max";
+option java_multiple_files = true;
+
+message MaxRequest {
+  sint32 number = 1;
+}
+
+message MaxResponse {
+  sint32 max = 1;
+}
+
+service MaxService {
+  rpc GetMax(stream MaxRequest) returns (stream MaxResponse) {};
+}

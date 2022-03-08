@@ -9,7 +9,9 @@ plugins {
 val junitVersion: String by project
 val grpcVersion: String by project
 val protocVersion: String by project
-val protocGenGrpcJava: String by project
+val protocGenGrpcJavaVersion: String by project
+val slf4jVersion: String by project
+val javaxAnnotationVersion: String by project
 
 repositories{
     mavenCentral()
@@ -19,6 +21,10 @@ dependencies {
     implementation("io.grpc:grpc-netty:$grpcVersion")
     implementation("io.grpc:grpc-protobuf:$grpcVersion")
     implementation("io.grpc:grpc-stub:$grpcVersion")
+    implementation("org.slf4j:slf4j-api:$slf4jVersion")
+    implementation("org.slf4j:slf4j-log4j12:$slf4jVersion")
+    implementation("javax.annotation:javax.annotation-api:$javaxAnnotationVersion")
+
 
     // testImplementation("io.grpc:grpc-testing:${grpcVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
@@ -35,7 +41,7 @@ protobuf {
     }
     plugins {
         id("grpc") {
-            artifact = "io.grpc:protoc-gen-grpc-java:$protocGenGrpcJava"
+            artifact = "io.grpc:protoc-gen-grpc-java:$protocGenGrpcJavaVersion"
         }
     }
     generateProtoTasks {

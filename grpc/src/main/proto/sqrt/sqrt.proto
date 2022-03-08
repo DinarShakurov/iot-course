@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package sqrt;
+
+option java_package = "ru.shakurov.iot.grpc.proto.sqrt";
+option java_multiple_files = true;
+
+message SqrtRequest {
+  double of = 1;
+}
+
+message SqrtResponse {
+  double sqrt = 1;
+}
+
+service SqrtService {
+  rpc Sqrt(SqrtRequest) returns (SqrtResponse) {};
+}

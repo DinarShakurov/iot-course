@@ -1,4 +1,0 @@
-syntax = "proto3";
-
-option java_package = "ru.shakurov.iot.grpc.proto";
-option java_multiple_files = true;
